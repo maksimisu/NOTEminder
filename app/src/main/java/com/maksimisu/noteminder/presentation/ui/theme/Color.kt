@@ -1,4 +1,4 @@
-package com.maksimisu.noteminder.ui.theme
+package com.maksimisu.noteminder.presentation.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
