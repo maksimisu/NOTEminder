@@ -1,4 +1,4 @@
-package com.maksimisu.noteminder.presentation.screens
+package com.maksimisu.noteminder.presentation.screens.edit
 
 import androidx.compose.runtime.Composable
 import androidx.navigation.NavHostController

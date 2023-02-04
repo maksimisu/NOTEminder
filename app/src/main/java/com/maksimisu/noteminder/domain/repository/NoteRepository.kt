@@ -16,10 +16,10 @@ interface NoteRepository {
     suspend fun getAllNotes(): List<Note>
 
     @Query("SELECT * FROM note WHERE id=:noteId")
-    suspend fun getNoteById(noteId: Long)
+    suspend fun getNoteById(noteId: Long): Note
 
     @Query("SELECT * FROM note WHERE title=:noteTitle")
-    suspend fun getNoteByTitle(noteTitle: String)
+    suspend fun getNoteByTitle(noteTitle: String): List<Note>
 
     @Delete
     suspend fun deleteNote(note: Note)

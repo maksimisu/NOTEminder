@@ -1,6 +1,5 @@
 package com.maksimisu.noteminder.domain.model
 
-import androidx.compose.ui.graphics.Color
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -10,5 +9,5 @@ data class Note(
     val id: Long = 0,
     val title: String,
     val content: String,
-    val cardColor: Color
+    val cardColor: Int
 )
