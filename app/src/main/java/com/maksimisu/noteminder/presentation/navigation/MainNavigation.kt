@@ -10,7 +10,7 @@ import com.maksimisu.noteminder.presentation.screens.detailed.DetailedScreen
 
 sealed class Screens(val route: String) {
     object MainScreen: Screens("main_screen")
-    object NoteScreen: Screens("note_screen")
+    object DetailedScreen: Screens("note_screen")
     object EditScreen: Screens("edit_screen")
 }
 
@@ -23,7 +23,7 @@ fun SetupNavHost(navHostController: NavHostController) {
         composable(route = Screens.MainScreen.route) {
             MainScreen(navHostController = navHostController)
         }
-        composable(route = Screens.NoteScreen.route) {
+        composable(route = Screens.DetailedScreen.route) {
             DetailedScreen(navHostController = navHostController)
         }
         composable(route = Screens.EditScreen.route) {
