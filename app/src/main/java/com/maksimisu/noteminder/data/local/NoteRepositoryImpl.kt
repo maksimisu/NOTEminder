@@ -10,8 +10,8 @@ class NoteRepositoryImpl @Inject constructor(
 
     suspend fun insertNote(note: Note) = noteRepository.insertNote(note)
     suspend fun getAllNotes(): List<Note> = noteRepository.getAllNotes()
-    suspend fun getNoteById(noteId: Long) = noteRepository.getNoteById(noteId)
-    suspend fun getNoteByTitle(noteTitle: String) = noteRepository.getNoteByTitle(noteTitle)
+    suspend fun getNoteById(noteId: Long): Note = noteRepository.getNoteById(noteId)
+    suspend fun getNoteByTitle(noteTitle: String): List<Note> = noteRepository.getNoteByTitle(noteTitle)
     suspend fun deleteNote(note: Note) = noteRepository.deleteNote(note)
 
 }
