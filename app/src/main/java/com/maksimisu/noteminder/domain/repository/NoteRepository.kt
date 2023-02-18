@@ -1,15 +1,12 @@
 package com.maksimisu.noteminder.domain.repository
 
-import androidx.room.Dao
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.Query
+import androidx.room.*
 import com.maksimisu.noteminder.domain.model.Note
 
 @Dao
 interface NoteRepository {
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertNote(note: Note)
 
     @Query("SELECT * FROM note")

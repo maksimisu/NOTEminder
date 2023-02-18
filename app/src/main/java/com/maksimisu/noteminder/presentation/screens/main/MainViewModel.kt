@@ -21,6 +21,10 @@ class MainViewModel @Inject constructor(
     val notes: LiveData<List<Note>>
         get() = _notes
 
+    init {
+        getAllNotes()
+    }
+
     private val _notesByTitle = MutableLiveData<List<Note>>()
     val notesByTitle: LiveData<List<Note>>
         get() = _notesByTitle
