@@ -6,11 +6,9 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.text.BasicTextField
 import androidx.compose.material.*
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
-import androidx.compose.material.icons.filled.Close
 import androidx.compose.material.icons.filled.Done
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
@@ -27,7 +25,6 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.core.graphics.toColor
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
@@ -41,6 +38,10 @@ fun EditScreen(
     navHostController: NavHostController,
     id: Long
 ) {
+
+    val maxCharsTitle = 400
+    val maxLinesTitle = 2
+    val maxCharsContent = 20000
 
     val viewModel = hiltViewModel<EditViewModel>()
 
@@ -197,9 +198,10 @@ fun EditScreen(
                 Spacer(modifier = Modifier.height(10.dp))
                 TextField(
                     value = title,
-                    onValueChange = { title = it },
+                    onValueChange = { if (it.length <= maxCharsTitle) title = it },
                     label = { Text(titleLabel) },
                     textStyle = TextStyle(color = LightGray, fontSize = 24.sp),
+                    maxLines = maxLinesTitle,
                     modifier = Modifier
                         .fillMaxWidth()
                         .padding(horizontal = 15.dp)
@@ -207,7 +209,7 @@ fun EditScreen(
                 Spacer(modifier = Modifier.height(20.dp))
                 TextField(
                     value = content,
-                    onValueChange = { content = it },
+                    onValueChange = { if (it.length <= maxCharsContent) content = it },
                     label = { Text(contentLabel) },
                     textStyle = TextStyle(color = LightGray, fontSize = 14.sp),
                     modifier = Modifier

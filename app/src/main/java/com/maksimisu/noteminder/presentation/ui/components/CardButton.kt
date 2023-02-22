@@ -12,7 +12,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.maksimisu.noteminder.presentation.ui.theme.DarkRed
+import com.maksimisu.noteminder.presentation.ui.theme.DarkViolet
 import com.maksimisu.noteminder.presentation.ui.theme.LightGray
 
 @Composable
@@ -23,11 +23,10 @@ fun CardButton(
 ) {
     Box(
         modifier = modifier
-            .padding(horizontal = 15.dp)
             .fillMaxWidth()
             .height(54.dp)
             .clip(shape = RoundedCornerShape(10.dp))
-            .background(DarkRed)
+            .background(DarkViolet)
             .padding(start = 15.dp, end = 10.dp),
         contentAlignment = Alignment.Center,
     ) {
@@ -44,7 +43,7 @@ fun CardButton(
             )
             Icon(
                 imageVector = icon,
-                contentDescription = "New note",
+                contentDescription = text,
                 tint = LightGray,
                 modifier = Modifier
                     .size(36.dp)

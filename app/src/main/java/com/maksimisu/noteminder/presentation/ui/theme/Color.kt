@@ -18,3 +18,15 @@ val DarkBreeze = Color(0xFF00505B)
 val DarkGreen = Color(0xFF005B00)
 val DarkYellow = Color(0xFF5B5200)
 val DarkOrange = Color(0xFF5B3100)
+
+/*
+val DarkViolet = Color(0xFFD000FF)
+val DarkRed = Color(0xFFFF0000)
+val DarkPink = Color(0xFFFF009A)
+val DarkPurple = Color(0xFFCE00FF)
+val DarkBlue = Color(0xFF0000FF)
+val DarkBreeze = Color(0xFF00DFFF)
+val DarkGreen = Color(0xFF00FF00)
+val DarkYellow = Color(0xFFFFE500)
+val DarkOrange = Color(0xFFFF8900)
+*/

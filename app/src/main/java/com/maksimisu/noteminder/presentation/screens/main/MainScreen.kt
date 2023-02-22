@@ -3,6 +3,7 @@ package com.maksimisu.noteminder.presentation.screens.main
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -12,6 +13,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -56,14 +58,20 @@ fun MainScreen(navHostController: NavHostController) {
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
                 Spacer(modifier = Modifier.height(20.dp))
-                CardButton(
-                    text = "NEW NOTE...",
-                    icon = Icons.Filled.Add,
+                Box(
                     modifier = Modifier
-                        .clickable {
-                            navHostController.navigate(Screens.EditScreen.route)
-                        }
-                )
+                        .padding(horizontal = 15.dp)
+                        .clip(shape = RoundedCornerShape(10.dp))
+                ) {
+                    CardButton(
+                        text = "NEW NOTE...",
+                        icon = Icons.Filled.Add,
+                        modifier = Modifier
+                            .clickable {
+                                navHostController.navigate(Screens.EditScreen.route)
+                            }
+                    )
+                }
                 Spacer(modifier = Modifier.height(15.dp))
                 LazyColumn(
                     modifier = Modifier
